@@ -10,12 +10,14 @@ export default function ArchiveCard({ archive }: ArchiveCardProps) {
   return (
     <div className="group rounded-lg border border-border overflow-hidden bg-card hover:shadow-lg transition-shadow duration-200 h-full flex flex-col">
       {/* Image Container */}
-      <div className="relative h-48 w-full overflow-hidden bg-muted">
+      <div className="relative h-48 w-full overflow-hidden bg-muted flex-shrink-0">
         <Image
           src={archive.image}
           alt={archive.name}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover group-hover:scale-105 transition-transform duration-200"
+          priority={false}
         />
       </div>
 
